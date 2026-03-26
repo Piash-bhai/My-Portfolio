@@ -1,13 +1,17 @@
 @import "tailwindcss";
 
-
-#nav-logo{
-    text-shadow: 0 0 6px #fff, 0 0 20px #a8a3f8;
+#nav-logo {
+  text-shadow: 0 0 6px #fff, 0 0 20px #a8a3f8;
+  -webkit-box-reflect: above -70px linear-gradient(transparent,rgba(255, 255, 255, 1));
 }
+
+
 
 #nav-list{
      position: relative;
-     padding-bottom: 4px;
+     padding-bottom: 3px;
+
+     text-shadow: 0 0 4px #fff;
 }
 
 #nav-list::after {
@@ -16,6 +20,7 @@
   left: 0; bottom: 0;
   width: 100%; height: 2px;
    background: #fde68a;
+   text-shadow: 0 0 3px #fde68a;
   transform: scaleX(0);
   transform-origin: left; 
   transition: transform 0.3s ease;
@@ -33,6 +38,7 @@
     display: flex;
     font-size: 30px;
     font-weight: 600;
+    
 }
 
 .below-about{
@@ -61,25 +67,26 @@
 }
 
 
-#about-backend{
-
+#about-backend {
     position: relative;
+    font-family: 'DynaPuff';
+    border-radius: 1rem; /* same as rounded-2xl */
+    overflow: hidden;    /* IMPORTANT */
 }
 
-#about-backend::after{
-
+#about-backend::after {
     content: '';
-  position: absolute;
-  inset: 0; /* covers full div */
+    position: absolute;
+    inset: 0;
 
-  border: 2px solid #ecd36f;
-  border-radius: 4px;
+    border: 2px solid #ecd36f;
+    border-radius: inherit; 
 
-  opacity: 0;
-  transition: opacity 0.3s ease;
+    opacity: 0;
+    transition: opacity 0.3s ease;
 }
 
-#about-backend:hover::after{
+#about-backend:hover::after {
     opacity: 1;
 }
 
@@ -88,6 +95,9 @@
 #about-frontend{
 
     position: relative;
+    font-family: 'DynaPuff';
+     border-radius: 1rem; 
+    overflow: hidden;   
 }
 
 #about-frontend::after{
@@ -97,7 +107,7 @@
   inset: 0; /* covers full div */
 
   border: 2px solid #ecd36f;
-  border-radius: 4px;
+  border-radius: inherit;
 
   opacity: 0;
   transition: opacity 0.3s ease;
@@ -106,3 +116,185 @@
 #about-frontend:hover::after{
     opacity: 1;
 }
+
+#about-experience{
+
+    text-shadow: 0 0 2px #fff;
+    font-family: 'DynaPuff';
+}
+
+
+#contact-form{
+        border: 2px solid #fde68a;
+
+        height: 40px;
+        width: 250px;
+        border-radius: 10px;
+        color: #fff;
+}
+
+#contact-form:focus {
+             outline: none;
+    border: 2px solid #fde68a; 
+}
+
+
+
+#contact-form-email{
+        border: 2px solid #fde68a;
+
+        height: 40px;
+        width: 520px;
+        border-radius: 10px;
+        color: #fff;
+}
+
+#contact-form-email:focus {
+             outline: none;
+    border: 2px solid #fde68a; 
+}
+
+.img-wrapper {
+    position: relative;
+    display: inline-block;
+    border-radius: 50%;
+    padding: 4px; 
+    margin-right: 60px;
+}
+
+/* 🔥 rotating border */
+.img-wrapper::before,
+.img-wrapper::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background: conic-gradient(
+        from var(--deg),
+        #f5da6e,
+        #ecd36f,
+        #fff,
+        #f5da6e
+    );
+
+    border-radius: 50%;
+    z-index: -1;
+
+    animation: autoRotate 2s linear infinite;
+}
+
+/* glow */
+.img-wrapper::after {
+    filter: blur(10px);
+}
+
+/* image */
+.profile-img {
+    display: block;
+    width: 300px;
+    border-radius: 50%;
+}
+
+/* animation */
+@property --deg {
+    syntax: '<angle>';
+    inherits: true;
+    initial-value: 0deg;
+}
+
+@keyframes autoRotate {
+    to {
+        --deg: 360deg;
+    }
+}
+
+#welcome-txt{
+    animation: text-appear both;
+    animation-timeline: view();
+    animation-range: entry 100% entry 200%;
+}
+
+@keyframes text-appear{
+    from{
+        opacity: 0;
+        transform: translateY(100px);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+} 
+
+
+
+#welcome-txt-right {
+    opacity: 0; /* initial state */
+    
+    animation: slide-right 1s forwards ease-out;
+}
+
+@keyframes slide-right {
+    from {
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+    to {
+        opacity: 1; /* ensure fully opaque */
+        transform: translateX(0);
+    }
+}
+
+
+#welcome-txt-top {
+    opacity: 0; 
+    animation-timeline: view();/* initial state */
+    
+    animation: slide-top 1s forwards ease-out;
+}
+
+@keyframes slide-top {
+    from {
+        opacity: 0;
+        transform: translateY(100px);
+    }
+    to {
+        opacity: 1; /* ensure fully opaque */
+        transform: translateY(0);
+    }
+}
+
+
+#left-appear {
+    animation: text-left-appear both;
+    animation-timeline: view();
+    animation-range: entry 0% entry 200%; /* finishes animation early, stays visible */
+}
+
+@keyframes text-left-appear {
+    from {
+        opacity: 0;
+        transform: translateX(100px);
+    }
+    to {
+        opacity: 1; /* make sure this is 1, not 2 */
+        transform: translateX(0);
+    }
+}
+
+#right-appear{
+    animation: text-right-appear both;
+    animation-timeline: view();
+    animation-range: entry 0% entry 200%; /* finishes animation early, stays visible */
+}
+
+@keyframes text-right-appear {
+    from {
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+    to {
+        opacity: 1; /* make sure this is 1, not 2 */
+        transform: translateX(0);
+    }
+}
+

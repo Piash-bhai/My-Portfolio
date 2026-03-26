@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Piash</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@400..700&display=swap" rel="stylesheet">
+
      <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
      
 </head>
@@ -12,11 +16,11 @@
     <div class="min-h-screen ">
     <div>
         <nav class="flex items-center justify-between  font-semibold text-white text-2xl  mr-14 pt-8">
-            <a href="#"  class="text-white ml-18 text-[30px] tracking-[6px]" id="nav-logo">PIASH</a>
+            <a href="#"  class="text-white ml-18 text-[30px] tracking-[6px] " id="nav-logo">PIASH</a>
             <ul class="flex  ml-auto  gap-8" >
                 <li><a href="#skills-section" class="hover:text-amber-200 " id="nav-list">About Me</a></li>
                 <li><a href="#" class="hover:text-amber-200 " id="nav-list">Achievement</a></li>
-                <li><a href="#" class="hover:text-amber-200 " id="nav-list">Skills</a></li>
+                <li><a href="#" class="hover:text-amber-200 " id="nav-list">Projects</a></li>
                 <li><a href="#" class="hover:text-amber-200 " id="nav-list">Contact</a></li>
             </ul>
           
@@ -25,19 +29,23 @@
 
     <div class="mt-52 ml-20 flex justify-between">
         <div>
-        <h1 class="font-bold text-white text-6xl">
-            Welcome to my web. 
-            <br> Its Piash.
+        <h1 class="font-bold text-white text-6xl" id="welcome-txt-right">
+            <span class="bg-gradient-to-r from-amber-200 to-white bg-clip-text text-transparent">Welcome</span> to my web. 
+            <br> Its <span class="bg-gradient-to-r from-amber-200 to-white bg-clip-text text-transparent">Piash.</span>
         </h1>
-        <p class="text-white text-2xl"> I'm a Software Engineering enthusiast.<br> Currently studying at IIUC.</p>
+        <p class="text-white text-2xl font-['DynaPuff'] mt-4" id="welcome-txt-right"> I'm a Software Engineering enthusiast.<br> Currently studying at IIUC.</p>
         <br>
         
-        <a href="#" class="mt-5 bg-amber-200 rounded-full px-2 py-2 font-semibold hover:bg-transparent hover:border-2 hover:border-amber-200 hover:text-white hover:px-3 hover:py-3 hover:shadow-[0_0_15px_#fcd34d]"> 
-            Download My CV!<span class="text-2xl font-bold py-0.5">&#8681</span></a>
+        <a href="#" class="mt-5 bg-gradient-to-r from-amber-200 to-white  rounded-full px-2 py-2 font-semibold hover:bg-gradient-to-r hover:from-transparent hover:to-transparent hover:border-2 hover:border-amber-200 hover:text-white hover:px-3 hover:py-3 hover:shadow-[0_0_15px_#fcd34d]" id="welcome-txt-top"> 
+            Download My CV!</a>
 
             </div>
 
-            <img src="piash.jpeg" class="w-96  mr-36 rounded-full border-amber-200 border-2">
+          <div class="img-wrapper">
+                <img src="piash.jpeg" class="profile-img">
+
+        </div>
+
     </div>
 
     </div>
@@ -45,28 +53,33 @@
     <div class="min-h-screen pt-36 " id="skills-section">
 
 
-                <div>
-                    <div class="about-me">
-                        <h1 class="text-white font-semibold">About <span class="text-amber-300">Me</span></h1>
+                <div >
+                    <div class="about-me" id="welcome-txt">
+                        <h1 class="text-white font-bold text-[40px] ">About <span class="bg-gradient-to-r from-amber-200 to-white bg-clip-text text-transparent">ME</span></h1>
                     </div>
 
                     <div class="below-about">
-                        <div class="bl-about1">
-                            <p class="text-white">I'm a <span class="text-amber-300">Professional</span> and <br> Experienced <span class="text-amber-300">Developer</span>.</p>
+                        <div class="bl-about1" id="right-appear">
+                            <p class="text-white font-bold">I'm a <span class="bg-gradient-to-r from-amber-200 to-white bg-clip-text text-transparent">Professional</span> and <br> Experienced
+                                 <span class="bg-gradient-to-r from-amber-200 to-white bg-clip-text text-transparent">Developer</span>.</p>
+
+                            <div class="bg-gray-600 rounded-4xl  w-104 h-50  border-t-4 border-t-amber-200 mt-6">
+                                <p class=" text-white text-[28px] text-center mt-8" id="about-experience">I've been working <br> in this field <br> for almost like 2 yrs.</p>
+                            </div>
                         </div>
-                        <div class="bl-about2">
-                            <p class="text-amber-300 ml-7 tracking-[4px]">Technologies I've been working with</p>
+                        <div class="bl-about2" id="left-appear">
+                            <p class="text-amber-200 ml-7 tracking-[4px] text-shadow-[0_0_4px_#fcd34d] pt-22">Technologies I've been working with</p>
                             <div class="flex" >
-                                <div class=" h-72 w-48 m-5 bg-gray-600" id="about-backend">
-                                    <h1 class="text-white text-center pt-2">Backend</h1>
+                                <div class=" h-72 w-48 m-5 bg-gray-600 rounded-2xl" id="about-backend">
+                                    <h1 class=" text-center pt-2"><span class="bg-gradient-to-r from-amber-200 to-white bg-clip-text text-transparent">Backend</span></h1>
                                        <ol class="list-disc text-white ml-8 mt-6  text-[20px]">
                                         <li>Nodejs</li>
                                         <li>MongoDB</li>
                                         <li>MySQL</li>
                                        </ol>
                                 </div>
-                                <div class=" h-72 w-48 m-5 bg-gray-600" id="about-frontend">
-                                    <h1 class="text-white  text-center pt-2">Frontend</h1>
+                                <div class=" h-72 w-48 m-5 bg-gray-600 rounded-2xl" id="about-frontend">
+                                    <h1 class="  text-center pt-2"><span class="bg-gradient-to-r from-amber-200 to-white bg-clip-text text-transparent">Frontend</span></h1>
                                     <ul class="list-disc text-white ml-8 mt-6 text-[20px]">
                                         <li>HTML</li>
                                         <li>CSS</li>
@@ -84,6 +97,44 @@
         </div>
 
         <section class="min-h-screen">
+
+            <div class="pt-24  ml-52" id="welcome-txt">
+                    <p class="text-[40px] font-bold"><span class="bg-gradient-to-r from-amber-200 to-white bg-clip-text text-transparent">Get In Touch</span></p>
+            </div>
+
+            <div class="ml-52 flex mt-12">
+                <div id="welcome-txt">
+                        <p class="text-white text-[25px] font-['DynaPuff']">If u are interested, <br> Please kindly fill up the form.</p>
+                </div>
+                <div class="ml-96  ml-40 bg-gray-600 h-80 w-[700px] p-6 rounded-4xl bg-gray-600 h-80 w-[400px] p-6 rounded-xl">
+                <div class="ml-16 flex mt-8">
+                        <div>
+                                 <p class="text-white text-[18px] font-['DynaPuff']">*First Name</p>
+                        
+                             <input type="text" id="contact-form" >
+                        </div>
+
+                        <div>
+                                <p class="text-white text-[18px] ml-4 font-['DynaPuff']">*Second Name</p>
+                             <input type="text" id="contact-form" class="ml-4">
+                        </div>
+                       
+                             
+
+                    </div>
+
+                    <div class="mt-8 ml-16">
+                        <p class="text-white text-[18px] font-['DynaPuff'] ">*Email</p>
+                        <input type="text" id="contact-form-email" class="">
+
+                        
+                    </div>
+                    <div class="mt-8 ml-132">
+                        <a href="#" class="bg-gradient-to-r from-amber-200 to-white  rounded-full px-2 py-2 font-semibold text-[18px]">Send</a>
+                    </div>
+                       
+                </div>
+            </div>
 
         </section>
 
